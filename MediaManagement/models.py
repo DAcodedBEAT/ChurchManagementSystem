@@ -27,6 +27,8 @@ class Photo(AbstractMedia):
     """
     media = models.ImageField(upload_to="""enter valid upload path here""")
     thumb = models.ImageField(upload_to="""enter valid upload path here""")
+    image_height = models.PositiveIntegerField(editable=False)
+    image_width = models.PositiveIntegerField(editable=False)
     default = models.BooleanField(default=False)
 
 

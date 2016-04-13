@@ -35,17 +35,20 @@ class UserProfile(models.Model):
     Creates the model of the UserProfile object(s).
     """
     int_uuid = generate_id.int_uuid()
+
     # System Data
     user = models.OneToOneField(User, parent_link=True)
     slug = models.SlugField(default=str(int_uuid), unique=True)
     created_on = models.DateTimeField(_("created on"), default=timezone.now)
     updated_on = models.DateTimeField(_("updated on"), default=timezone.now)
+
     # Base Person Data
     gender = models.BooleanField(choices=((True, 'Male'), (False, 'Female')))  # TRUE for male, FALSE for female
     DOB = models.DateField(_("date of birth"), blank=True, null=True)
     DOD = models.DateField(_("date of death"), blank=True, null=True)
     bio = models.TextField(_("bio"), blank=True)
     phone_number = models.CharField(_("phone number"), max_length=10, null=True, blank=True)
+
     # Family Data
     parents = models.ManyToManyField("UserProfile", related_name='p', verbose_name="Parents", null=True, blank=True)
     siblings = models.ManyToManyField("UserProfile", related_name='s', verbose_name="Siblings", null=True, blank=True)

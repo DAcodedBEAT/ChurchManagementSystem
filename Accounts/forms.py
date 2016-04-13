@@ -14,21 +14,23 @@ class UserRegisterForm(UserCreationForm):
     #class Meta:
     #    model = User
     #    fields = ('first_name', 'last_name', 'email', 'username', 'password1', 'password2')
-
+"""
     def __init__(self, *args, **kwargs):
         super(UserRegisterForm, self).__init__(*args, **kwargs)
         self.fields['email'].required = True
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
+        """
 
 
 class UserProfileCreateForm(ModelForm):
     """
     Creates form to create UserProfile
     """
+    """
     class Meta:
         model = UserProfile
-        fields = ('gender', 'DOB', 'DOD', 'bio', 'phone_number')
+        fields = ('gender', 'DOB', 'DOD', 'bio', 'phone_number')"""
 
 
 class UserEditForm(UserChangeForm):
@@ -38,10 +40,10 @@ class UserEditForm(UserChangeForm):
     pass
 
 
-class UserProfileEditForm(ModelForm):
+#class UserProfileEditForm(ModelForm):
     """
     Creates form to create UserProfile
     """
-    class Meta:
+"""    class Meta:
         model = UserProfile
-        fields = ('location', 'bio', 'phone_number')
+        fields = ('location', 'bio', 'phone_number')"""

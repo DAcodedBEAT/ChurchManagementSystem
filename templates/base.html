@@ -43,7 +43,7 @@
     <![endif]-->
     <div class="navbar">
         {# navbar stuff goes here #}
-        {% include navbar.html %}
+        {% include 'navbar.html' %}
     </div>
 
     <header>
@@ -51,7 +51,7 @@
     </header>
 
     {% block alerts %}
-        {% include alerts.html %}
+        {% include 'alerts.html' %}
     {% endblock %}
 
     {% block modals %}{% endblock %}
@@ -62,7 +62,7 @@
 
     <footer>
         {% block footer %}
-            {% include footer.html %}
+            {% include 'footer.html' %}
         {% endblock %}
     </footer>
 {% endblock %}

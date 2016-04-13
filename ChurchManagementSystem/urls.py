@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^pledge/', include('Accounting.urls')),
     url(r'^a/', include('Accounts.urls')),
+    url(r'^$', include('CMSHome.urls')),
 )
 
 if settings.DEBUG:

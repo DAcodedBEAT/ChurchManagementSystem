@@ -87,7 +87,7 @@ def view_user(request, user_id=None):
             user = user_list[:1].get()
             if user.username == user_id:
                 context = [user]
-                return render(request, 'accounts/view_user.html', context)
+                return render(request, 'view_user.html', context)
             else:    # user has a different capitalization
                 return redirect('Accounts.view_user', user_id=user.username)
         else:

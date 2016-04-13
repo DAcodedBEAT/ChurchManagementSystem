@@ -7,9 +7,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{ _("ChurchManagementSystem") }}</a>
+            <a class="navbar-brand" href="#">
+                {{ _("ChurchManagementSystem") }}
+            </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        {% if True == False %}
             {% if user.is_authenticated == False %}
             <form class="navbar-form navbar-right" role="form">
                 <div class="form-group">
@@ -22,6 +25,7 @@
             </form>
             {% else %}
             {% endif %}
+        {% endif %}
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
